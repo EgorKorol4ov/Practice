@@ -106,7 +106,7 @@ namespace TitlePageGenerator
             this.comboBox_TypeWork.Width = 150;
             this.comboBox_TypeWork.Items.AddRange(new string[]
             {
-                "Лабораторная работа", "Практическая работа", "Индивидуальное задание", 
+                "Лабораторная работа", "Практическая работа", "Индивидуальное задание",
                 "Учебная практика", "Производственная практика", "Преддипломная практика"
             });
 
@@ -151,7 +151,7 @@ namespace TitlePageGenerator
             this.ClientSize = new System.Drawing.Size(550, 370);
             this.Controls.AddRange(new System.Windows.Forms.Control[]
             {
-                this.textBox_FIO, this.textBox_Group, this.textBox_Proveril, 
+                this.textBox_FIO, this.textBox_Group, this.textBox_Proveril,
                 this.textBox_Subject, this.textBox_Topic, this.comboBox_DocType, this.comboBox_WorkNumber,
                 this.comboBox_Font, this.comboBox_Style, this.comboBox_TypeWork, this.numericUpDown_Size,
                 this.numericUpDown_IndentVypolnil, this.numericUpDown_IndentProveril,

@@ -86,7 +86,7 @@ namespace TitlePageGenerator
 
             AddParagraphStyled(doc, "Кафедра «Управление и защита информации»", 14, false, false);
 
-            AddParagraphStyled(doc, comboBox_DocType.Text, 14, false, false);
+            AddParagraphStyled(doc, comboBox_DocType.Text, 17, false, false);
             AddParagraphStyled(doc, comboBox_TypeWork.Text, 14, false, false);
             AddParagraphStyled(doc, "Задание " + comboBox_WorkNumber.Text, 14, false, true);
             AddParagraphStyled(doc, "по дисциплине", 14, false, false);
@@ -110,7 +110,7 @@ namespace TitlePageGenerator
                 para.Range.InsertParagraphAfter();
             }
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 4; i++)
                 AddParagraphStyled(doc, "", 14, false, false);
 
             Word.Range endRange = doc.Content;
@@ -122,7 +122,6 @@ namespace TitlePageGenerator
             moscowParagraph.Range.Font.Size = 14;
             moscowParagraph.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
             moscowParagraph.LeftIndent = 0;
-            moscowParagraph.Range.InsertParagraphAfter();
 
             string fileName = Application.StartupPath + "\\Титульный_лист_" + DateTime.Now.ToString("yyyyMMdd_HHmm") + ".docx";
             doc.SaveAs2(fileName);
