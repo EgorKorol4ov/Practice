@@ -92,7 +92,7 @@ namespace TitlePageGenerator
             AddParagraphStyled(doc, "по дисциплине", 14, false, false);
             AddParagraphStyled(doc, textBox_Subject.Text, 14, false, true);
             AddParagraphStyled(doc, textBox_Topic.Text, 14, false, false);
-            AddParagraphStyled(doc, "Вариант № " + comboBox_Var.Text, 14, false, true);
+            AddParagraphStyled(doc, "Вариант № " + comboBox_Variant.Text, 14, false, true);
 
             AddParagraphStyled(doc, "", 14, false, false);
 

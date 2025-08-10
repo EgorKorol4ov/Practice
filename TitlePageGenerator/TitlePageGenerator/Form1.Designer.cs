@@ -23,7 +23,7 @@ namespace TitlePageGenerator
 
             this.comboBox_DocType = new System.Windows.Forms.ComboBox();
             this.comboBox_WorkNumber = new System.Windows.Forms.ComboBox();
-            this.comboBox_Var = new System.Windows.Forms.ComboBox();
+            this.comboBox_Variant = new System.Windows.Forms.ComboBox();
             this.comboBox_Font = new System.Windows.Forms.ComboBox();
             this.comboBox_Style = new System.Windows.Forms.ComboBox();
             this.comboBox_TypeWork = new System.Windows.Forms.ComboBox();
@@ -112,12 +112,20 @@ namespace TitlePageGenerator
 
             this.comboBox_WorkNumber.Location = new System.Drawing.Point(350, 90);
             this.comboBox_WorkNumber.Width = 150;
-            for (int i = 1; i <= 10; i++) this.comboBox_WorkNumber.Items.Add(i.ToString());
+            this.comboBox_WorkNumber.Items.AddRange(new string[]
+            {
+                "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
+            });
 
-            this.comboBox_Var.Location = new System.Drawing.Point(20, 170);
-            this.comboBox_Var.Width = 150;
-            this.comboBox_Var.Text = "Номер варианта";
-            for (int i = 1; i <= 30; i++) this.comboBox_Var.Items.Add(i.ToString());
+            this.comboBox_Variant.Location = new System.Drawing.Point(20, 170);
+            this.comboBox_Variant.Width = 150;
+            this.comboBox_Variant.Text = "Номер варианта";
+            this.comboBox_Variant.Items.AddRange(new string[]
+            {
+                "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", 
+                "12", "13", "14", "15", "16", "17", "18", "19", "20", "21",
+                "22", "23", "24", "25", "26", "27", "28", "29", "30"
+            });
 
             this.comboBox_Font.Location = new System.Drawing.Point(350, 190);
             this.comboBox_Font.Width = 150;
@@ -155,7 +163,7 @@ namespace TitlePageGenerator
                 this.textBox_Subject, this.textBox_Topic, this.comboBox_DocType, this.comboBox_WorkNumber,
                 this.comboBox_Font, this.comboBox_Style, this.comboBox_TypeWork, this.numericUpDown_Size,
                 this.numericUpDown_IndentVypolnil, this.numericUpDown_IndentProveril,
-                this.button_Save, this.button_CreateWord, this.comboBox_Var,
+                this.button_Save, this.button_CreateWord, this.comboBox_Variant,
                 label_Font, label_Style, label_Size, label_IndentVypolnil, label_IndentProveril, label_DocType, label_Var, label_TypeWork
             });
 
@@ -169,7 +177,7 @@ namespace TitlePageGenerator
         private System.Windows.Forms.TextBox textBox_Subject;
         private System.Windows.Forms.TextBox textBox_Topic;
         private System.Windows.Forms.ComboBox comboBox_DocType;
-        private System.Windows.Forms.ComboBox comboBox_Var;
+        private System.Windows.Forms.ComboBox comboBox_Variant;
         private System.Windows.Forms.ComboBox comboBox_WorkNumber;
         private System.Windows.Forms.ComboBox comboBox_Font;
         private System.Windows.Forms.ComboBox comboBox_Style;
