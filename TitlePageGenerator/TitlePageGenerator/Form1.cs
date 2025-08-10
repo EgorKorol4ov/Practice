@@ -69,6 +69,11 @@ namespace TitlePageGenerator
             wordApp.Visible = true;
             Word.Document doc = wordApp.Documents.Add();
 
+            Word.Style normalStyle = doc.Styles["Обычный"];
+            normalStyle.ParagraphFormat.LeftIndent = 0f;
+            normalStyle.ParagraphFormat.SpaceAfter = 0f;
+            normalStyle.ParagraphFormat.SpaceBefore = 0f;
+
             AddParagraphStyled(doc, "министерство транспорта российской федерации", 14, true, true);
             AddParagraphStyled(doc, "федеральное государственное автономное образовательное учреждение высшего образования", 14, true, false);
             AddParagraphStyled(doc, "«российский университет транспорта» (рут (миит))", 14, true, true);
@@ -110,7 +115,7 @@ namespace TitlePageGenerator
                 para.Range.InsertParagraphAfter();
             }
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 12; i++)
                 AddParagraphStyled(doc, "", 14, false, false);
 
             Word.Range endRange = doc.Content;
