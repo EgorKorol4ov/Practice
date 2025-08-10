@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
+using TitlePageGenerator;
 
-namespace TitlePageGenerator
+namespace WordFormsGenerator
 {
     internal static class Program
     {
@@ -10,7 +11,7 @@ namespace TitlePageGenerator
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }
