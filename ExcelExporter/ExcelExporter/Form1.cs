@@ -14,32 +14,40 @@ namespace ExcelExporter
             InitializeDataGridView();
         }
 
+        private static readonly string[] ColumnHeaders =
+        {
+            "№",
+            "Наименование дисциплин",
+            "Курс",
+            "Семестр 1",
+            "Семестр 2",
+            "Шифр группы",
+            "Контингент",
+            "Кол-во потоков",
+            "Кол-во групп",
+            "Кол-во подгрупп",
+            "Лекц. на 1 гр.",
+            "Лекц. всего",
+            "Практ. на 1 гр.",
+            "Практ. всего",
+            "Лаб. на 1 гр.",
+            "Лаб. всего",
+            "ГАК, ДП",
+            "Летняя практика",
+            "Рук. аспир.",
+            "Доп. обр. структуры",
+            "Всего акад. час.",
+            "Всего в кредитах"
+        };
+
         private void InitializeDataGridView()
         {
-            dgvData.ColumnCount = 22;
+            dgvData.ColumnCount = ColumnHeaders.Length;
 
-            dgvData.Columns[0].Name = "№";
-            dgvData.Columns[1].Name = "Наименование дисциплин";
-            dgvData.Columns[2].Name = "Курс";
-            dgvData.Columns[3].Name = "Семестр 1";
-            dgvData.Columns[4].Name = "Семестр 2";
-            dgvData.Columns[5].Name = "Шифр группы";
-            dgvData.Columns[6].Name = "Контингент";
-            dgvData.Columns[7].Name = "Кол-во потоков";
-            dgvData.Columns[8].Name = "Кол-во групп";
-            dgvData.Columns[9].Name = "Кол-во подгрупп";
-            dgvData.Columns[10].Name = "Лекц. на 1 гр.";
-            dgvData.Columns[11].Name = "Лекц. всего";
-            dgvData.Columns[12].Name = "Практ. на 1 гр.";
-            dgvData.Columns[13].Name = "Практ. всего";
-            dgvData.Columns[14].Name = "Лаб. на 1 гр.";
-            dgvData.Columns[15].Name = "Лаб. всего";
-            dgvData.Columns[16].Name = "ГАК, ДП";
-            dgvData.Columns[17].Name = "Летняя практика";
-            dgvData.Columns[18].Name = "Рук. аспир.";
-            dgvData.Columns[19].Name = "Доп. обр. структуры";
-            dgvData.Columns[20].Name = "Всего акад. час.";
-            dgvData.Columns[21].Name = "Всего в кредитах";
+            for (int i = 0; i < ColumnHeaders.Length; i++)
+            {
+                dgvData.Columns[i].Name = ColumnHeaders[i];
+            }
 
             dgvData.AllowUserToAddRows = true;
             dgvData.AllowUserToDeleteRows = true;
@@ -199,30 +207,39 @@ namespace ExcelExporter
             sheet.Range["Y5", "Y7"].Orientation = Excel.XlOrientation.xlUpward;
         }
 
+        private static readonly double[] ColumnWidths =
+        {
+            3.3,
+            18.4,
+            2.9,
+            6,
+            6,
+            8.5,
+            4.9,
+            4.9,
+            4.9,
+            4.9,
+            4.4,
+            4.4,
+            4.4,
+            4.4,
+            4.4,
+            4.4,
+            6.6,
+            5,
+            5,
+            8.5,
+            5,
+            5.1
+        };
+
         private void SetColumnWidths(Excel.Worksheet sheet)
         {
-            sheet.Columns["D"].ColumnWidth = 3.3;
-            sheet.Columns["E"].ColumnWidth = 18.4;
-            sheet.Columns["F"].ColumnWidth = 2.9;
-            sheet.Columns["G"].ColumnWidth = 6;
-            sheet.Columns["H"].ColumnWidth = 6;
-            sheet.Columns["I"].ColumnWidth = 8.5;
-            sheet.Columns["J"].ColumnWidth = 4.9;
-            sheet.Columns["K"].ColumnWidth = 4.9;
-            sheet.Columns["L"].ColumnWidth = 4.9;
-            sheet.Columns["M"].ColumnWidth = 4.9;
-            sheet.Columns["N"].ColumnWidth = 4.4;
-            sheet.Columns["O"].ColumnWidth = 4.4;
-            sheet.Columns["P"].ColumnWidth = 4.4;
-            sheet.Columns["Q"].ColumnWidth = 4.4;
-            sheet.Columns["R"].ColumnWidth = 4.4;
-            sheet.Columns["S"].ColumnWidth = 4.4;
-            sheet.Columns["T"].ColumnWidth = 6.6;
-            sheet.Columns["U"].ColumnWidth = 5;
-            sheet.Columns["V"].ColumnWidth = 5;
-            sheet.Columns["W"].ColumnWidth = 8.5;
-            sheet.Columns["X"].ColumnWidth = 5;
-            sheet.Columns["Y"].ColumnWidth = 5.1;
+            int startIndex = 4;
+            for (int i = 0; i < ColumnWidths.Length; i++)
+            {
+                sheet.Columns[startIndex + i].ColumnWidth = ColumnWidths[i];
+            }
         }
 
         private void ApplyBordersAndFormatting(Excel.Worksheet sheet)
