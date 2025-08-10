@@ -31,7 +31,7 @@ namespace TitlePG
                 doc.PageSetup.LeftMargin = wordApp.CentimetersToPoints(2f);
                 doc.PageSetup.RightMargin = wordApp.CentimetersToPoints(2f);
 
-                wordApp.Visible = true;
+                wordApp.Visible = false;
                 doc.Activate();
 
                 AddCustomParagraph(doc, "Заявочный лист на участие в соревнованиях", "Times New Roman",
