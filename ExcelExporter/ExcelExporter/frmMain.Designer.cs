@@ -1,6 +1,6 @@
 ﻿namespace ExcelExporter
 {
-    partial class Form1
+    partial class frmMain
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.Button btnExportToExcel;
@@ -53,7 +53,7 @@
             this.Controls.Add(this.btnExportToExcel);
             this.Controls.Add(this.btnAddRow);
             this.Controls.Add(this.dgvData);
-            this.Name = "Form1";
+            this.Name = "frmMain";
             this.Text = "Excel Выгрузка";
 
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).EndInit();
