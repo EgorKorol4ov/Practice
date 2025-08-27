@@ -10,6 +10,12 @@ namespace TitlePageGenerator
         public frmCover()
         {
             InitializeComponent();
+            this.Load += FrmCover_Load;
+        }
+
+        private void FrmCover_Load(object sender, EventArgs e)
+        {
+            this.Text = $"Зад. №01 выполнил: Королёв Е.С.; Вар.: 13; Дата: {DateTime.Now:dd/MM/yyyy}; Заявочный лист";
         }
 
         private void createDocButton_Click(object sender, EventArgs e)
