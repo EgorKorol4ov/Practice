@@ -3,7 +3,7 @@ using System;
 
 namespace TitlePageGenerator
 {
-    partial class Form1
+    partial class frmTitle
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -167,7 +167,6 @@ namespace TitlePageGenerator
                 label_Font, label_Style, label_Size, label_IndentVypolnil, label_IndentProveril, label_DocType, label_Var, label_TypeWork
             });
 
-            this.Text = $"Задание №01 выполнил: Королёв Е.С.; Номер варианта: 13; Дата: {DateTime.Now:dd/MM/yyyy}";
             this.ResumeLayout(false);
         }
 

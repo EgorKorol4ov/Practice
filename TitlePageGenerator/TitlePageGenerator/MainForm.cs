@@ -3,22 +3,22 @@ using System.Windows.Forms;
 
 namespace TitlePageGenerator
 {
-    public partial class MainForm : Form
+    public partial class frmMain : Form
     {
-        public MainForm()
+        public frmMain()
         {
             InitializeComponent();
         }
 
         private void btnTitle_Click(object sender, EventArgs e)
         {
-            var f = new Form1();
+            frmTitle f = new frmTitle();
             f.ShowDialog();
         }
 
         private void btnCover_Click(object sender, EventArgs e)
         {
-            var f = new Form2();
+            frmCover f = new frmCover();
             f.ShowDialog();
         }
     }

@@ -5,9 +5,9 @@ using Word = Microsoft.Office.Interop.Word;
 
 namespace TitlePageGenerator
 {
-    public partial class Form2 : Form
+    public partial class frmCover : Form
     {
-        public Form2()
+        public frmCover()
         {
             InitializeComponent();
         }

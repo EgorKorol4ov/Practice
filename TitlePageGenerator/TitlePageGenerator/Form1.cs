@@ -8,19 +8,25 @@ using System.Reflection;
 
 namespace TitlePageGenerator
 {
-    public partial class Form1 : Form
+    public partial class frmTitle : Form
     {
-        public Form1()
+        public frmTitle()
         {
             InitializeComponent();
+            this.Load += FrmTitle_Load;
+        }
+
+        private void FrmTitle_Load(object sender, EventArgs e)
+        {
+            this.Text = $"Зад. №01 выполнил: Королёв Е.С.; Вар.: 13; Дата: {DateTime.Now:dd/MM/yyyy}";
         }
 
         private void button_Save_Click(object sender, EventArgs e)
         {
             string path = Application.StartupPath + "\\settings.txt";
-            var settings = new List<ParagraphSetting>();
+            List<ParagraphSetting> settings = new List<ParagraphSetting>();
 
-            var vypolnil = new ParagraphSetting
+            ParagraphSetting vypolnil = new ParagraphSetting
             {
                 Text = "Выполнил: ст. гр. " + textBox_Group.Text + ", " + textBox_FIO.Text,
                 Font = comboBox_Font.Text,
@@ -29,7 +35,7 @@ namespace TitlePageGenerator
                 LeftIndent = (float)numericUpDown_IndentVypolnil.Value
             };
 
-            var proveril = new ParagraphSetting
+            ParagraphSetting proveril = new ParagraphSetting
             {
                 Text = "Проверил: " + textBox_Proveril.Text,
                 Font = comboBox_Font.Text,
@@ -55,8 +61,8 @@ namespace TitlePageGenerator
                 return;
             }
 
-            var lines = File.ReadAllLines(path);
-            var settings = lines.Select(l => ParagraphSetting.FromString(l)).Where(s => s != null).ToList();
+            string[] lines = File.ReadAllLines(path);
+            List<ParagraphSetting> settings = lines.Select(l => ParagraphSetting.FromString(l)).Where(s => s != null).ToList();
 
             if (settings.Count == 0)
             {
@@ -101,7 +107,7 @@ namespace TitlePageGenerator
 
             AddParagraphStyled(doc, "", 14, false, false);
 
-            foreach (var s in settings)
+            foreach (ParagraphSetting s in settings)
             {
                 Word.Paragraph para = doc.Content.Paragraphs.Add(ref missing);
                 para.Range.Text = s.Text;
@@ -115,7 +121,7 @@ namespace TitlePageGenerator
                 para.Range.InsertParagraphAfter();
             }
 
-            for (int i = 0; i < 12; i++)
+            for (int i = 0; i < 11; i++)
                 AddParagraphStyled(doc, "", 14, false, false);
 
             Word.Range endRange = doc.Content;

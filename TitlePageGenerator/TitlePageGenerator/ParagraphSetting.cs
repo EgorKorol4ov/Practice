@@ -21,16 +21,26 @@ namespace TitlePageGenerator
 
         public static ParagraphSetting FromString(string line)
         {
-            var parts = line.Split(';');
-            if (parts.Length < 5) return null;
-            return new ParagraphSetting
+            string[] parts = line.Split(';');
+            ParagraphSetting result;
+
+            if (parts.Length < 5)
             {
-                Text = parts[0],
-                Font = parts[1],
-                FontSize = float.Parse(parts[2]),
-                FontStyle = parts[3],
-                LeftIndent = float.Parse(parts[4])
-            };
+                result = null;
+            }
+            else
+            {
+                result = new ParagraphSetting
+                {
+                    Text = parts[0],
+                    Font = parts[1],
+                    FontSize = float.Parse(parts[2]),
+                    FontStyle = parts[3],
+                    LeftIndent = float.Parse(parts[4])
+                };
+            }
+
+            return result;
         }
     }
 }

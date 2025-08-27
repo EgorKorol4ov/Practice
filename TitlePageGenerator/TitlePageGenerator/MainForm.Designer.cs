@@ -2,7 +2,7 @@
 
 namespace TitlePageGenerator
 {
-    partial class MainForm
+    partial class frmMain
     {
         private System.ComponentModel.IContainer components = null;
         private Button btnTitle;
@@ -34,11 +34,11 @@ namespace TitlePageGenerator
             this.btnCover.Text = "Заявочный лист";
             this.btnCover.UseVisualStyleBackColor = true;
             this.btnCover.Click += new System.EventHandler(this.btnCover_Click);
- 
+
             this.ClientSize = new System.Drawing.Size(300, 160);
             this.Controls.Add(this.btnCover);
             this.Controls.Add(this.btnTitle);
-            this.Name = "MainForm";
+            this.Name = "frmMain";
             this.Text = "Генератор документов";
             this.ResumeLayout(false);
         }
